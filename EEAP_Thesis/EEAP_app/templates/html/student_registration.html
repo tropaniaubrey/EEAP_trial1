@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="js/custom.js"></script>
+
+    <title>Technological University of the Philippines - Cavite</title>
+
+
+</head>
+
+<style>
+
+*{
+    list-style: none;
+    text-decoration: none;
+    
+}
+    
+body,html {
+    background-image: linear-gradient(#EAEAEA, #B2B2B2,#3C4048);
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+    background-size: cover;  
+}
+    
+header {
+    margin: 0px;
+    margin-bottom: -24px;
+    padding: 0;
+    background-image: linear-gradient(to right, rgb(128, 0, 0),rgb(216, 32, 32), rgb(128, 0, 0));
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    padding: 1px 2%;
+    text-align: left;
+}
+    
+.logo {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 35px;
+    z-index: 99;
+    width: auto;
+    height: 50px;
+}
+    
+h2 {
+    font-family: "Saira Condensed", sans-serif;
+    margin: 0;
+    padding-top: 25px;
+    padding-bottom: 8px;
+    padding-right: 80px;
+    font-weight: 500;
+    font-size: 45px;
+    color: #edfef1;
+    text-decoration: none;
+}
+    
+text.heading {
+    font-family: "Saira Condensed", sans-serif;
+    text-align: left;
+    margin-left: 30px;
+    font-size: 20px;
+    color: #edfef1;
+    text-decoration: none;
+}
+    
+#sideBar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: rgb(52, 58, 64);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+    
+.mainNav {
+    margin-top: 70px;
+}
+    
+.mainNav a {
+    margin-bottom: 15px;
+}
+    
+#sideBar a {
+    padding: 8px 8px 8px 10px;
+    text-decoration: none;
+    /* font-size: 25px; */
+    color: #fff;
+    display: block;
+    transition: 0.4s;
+    text-align: center;
+    text-transform: uppercase;
+}
+    
+a.sideText {
+    font-size: 22px;
+    margin-top: -15px;
+    margin-bottom: px;
+}
+    
+a.subText {
+    text-decoration: none;
+    /* font-size: 22px; */
+    margin-top: -10px;
+    margin-bottom: px;
+}
+    
+a.logout {
+    font-size: 15px;
+    margin-top: 110px;
+}
+    
+a.logout:hover {
+    color: #fff;
+    background: rgb(178, 9, 38)
+}
+    
+button.outButton {
+    color: #edfef1;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    border-width: none;
+}
+    
+#sideBar .btn-area {
+    position: absolute;
+    top: -5px;
+    right: 33px;
+    font-size: 40px;
+}
+    
+#sideBar .btn-area:hover {
+    color: #fff;
+    background: rgb(178, 9, 38);
+}
+    
+span {
+    position: absolute;
+    right: 40px;
+    top: 15px;
+    font-size: 30px;
+    transition: 0.3s;
+    cursor: pointer;
+    color: #edfef1;
+}
+    
+.a {
+    text-align: center;
+    padding-right: 30px;
+    color: #edfef1;
+}
+
+
+.id {
+    margin-top: 2px;
+    margin-bottom: 1px;
+    width: auto;
+    height: 160px;
+}
+ 
+.home {
+    position: absolute;
+    right: 50px;
+    top: 6px;
+    --h: 3.2em;
+    border-style: none;
+    line-height: var(--h);
+    color: #fff;
+    background: 
+        linear-gradient(rgb(178, 9, 38) 0 0) 
+        bottom/100% var(--_d, 0) no-repeat;
+        transition: 0.3s;
+}
+    
+.home:hover {
+    --_d: 100%;
+    --_t: 0;
+    --_c: #0000;
+}
+
+section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    top: 120px;
+}
+
+section .box {
+    position: relative;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: -80px;
+    padding: 50px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    border-radius: 20px;
+    background-color: rgb(248, 248, 248);
+    overflow: hidden;
+    width: 150%;
+}
+
+
+p {
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    font-family:Georgia, 'Times New Roman', Times, serif ;
+    letter-spacing: 5px;
+    font-size: 25px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    /* margin-right: -50px; */
+    margin-left: 80px;
+    margin-right: -55px;
+    text-shadow: 2px 2px rgb(180, 179, 179);
+}
+
+.coursel {
+    position: absolute;
+    color:#0b0a0a;
+    /* transform: translateY(-50%); */
+    font-size: 20px;
+    pointer-events: none;
+    font-family: "Courier New";
+    font-weight: 600;
+    left: 11%;
+    top: 58%;
+}
+
+.yearl {
+    position: absolute;
+    color:#0b0a0a;
+    /* transform: translateY(-50%); */
+    font-size: 20px;
+    pointer-events: none;
+    font-family: "Courier New";
+    font-weight: 600;
+    left: 11%;
+    top: 66%; 
+}
+
+.userl {
+    position: absolute;
+    color:#0b0a0a;
+    /* transform: translateY(-50%); */
+    font-size: 20px;
+    pointer-events: none;
+    font-family: "Courier New";
+    font-weight: 600;
+    left: 11%;
+    top: 82%;
+}
+
+form .combo {
+    margin-left: 43%;
+    margin-bottom: 6%;
+    padding: 0 5px;
+    height: 35px;
+    font-size: 20px;
+    border: 2px solid #adadad;
+    background: none;
+    width: 55%;
+}
+
+form .txt_field{
+    position: relative;
+    border: 2px solid #adadad;
+    margin: 30px 0;
+    width: 55%;
+    left: 43%;
+}
+
+.datepicker {
+    position: relative;
+    border: 2px solid #adadad;
+    margin: 30px 0;
+    width: 55%;
+    left: 43%;
+}
+
+
+
+.txt_field input{
+    padding: 0 5px;
+    height: 35px;
+    font-size: 20px;
+    border: none;
+    background: none;
+    outline: 2px;
+    /* font-family: "Courier New";         */
+}
+
+.txt_field label{
+    position: absolute;
+    color:#0b0a0a;
+    transform: translateY(-50%);
+    font-size: 20px;
+    pointer-events: none;
+    font-family: "Courier New";
+    font-weight: 600;
+    left: -75%;
+    top: 50%;
+}
+
+#submit{
+    margin-top: 15px;
+    margin-left: 14px;
+    margin-bottom: 10px;
+    width: 45%;
+    height: 40px;
+    border: 2px solid;
+    background: #b30d0d;
+    font-size: 18px;
+    color: #e9f4fb;
+    font-family: "Courier New";
+    cursor: pointer;
+    outline: none;
+    border-color:#910000;
+    font-weight: 700;
+    padding-left: 5%;
+    padding-right: 5%;
+    left: 60.5%;
+    bottom: 15%;
+    /* position: absolute; */
+    border-radius: 10px;
+}
+    
+#submit:hover{
+    border-color:#910000;
+    background: #910000;
+    transition: .5s;
+}
+
+button[type="button"]{
+    margin-top: 15px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    width: 45%;
+    height: 40px;
+    border: 2px solid;
+    background: #848282;
+    font-size: 18px;
+    color: #e9f4fb;
+    font-family: "Courier New";
+    cursor: pointer;
+    outline: none;
+    border-color:#545151;
+    font-weight: 700;
+    padding-left: 5%;
+    padding-right: 5%;
+    /* position: absolute; */
+    left: 60.5%;
+    bottom: 10%;
+    border-radius: 10px;
+}
+    
+button[type="button"]:hover{
+    border-color:#910000;
+    background: #910000;
+    transition: .5s;
+}
+
+/* input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+} */
+
+@media only screen and (min-width: 1400px) {
+
+a.logout {
+    font-size: 15px;
+    margin-top: 45vh;
+}
+}
+
+</style>
+
+
+<script>
+function openBtn()
+{
+    document.getElementById("sideBar").style.width = "250px";
+}
+
+function closeBtn()
+{
+    document.getElementById("sideBar").style.width = "0";
+}
+
+function submit_forms(){
+    var result = confirm('Are you sure about the information given below?');
+    if (result == true) {
+        document.form.submit()  
+      
+    }
+    else{
+        event.preventDefault()
+    }
+    // var firstname = document.getElementById('first_name');
+    // var lastname = document.getElementById('last_name');
+    // var idnumber = document.getElementById('idnumber');
+    // var email = document.getElementById('email');
+    // var contactnumber = document.getElementById('contactnumber');
+    // var course = document.getElementById('course');
+    // var year = document.getElementById('year');
+    // var birthday = document.getElementById('birthday');
+    // var usertype = document.getElementById('usertype');
+
+    // const success =  document.getElementById('success');
+    // const danger =  document.getElementById('danger');
+
+    // if(firstname.value === '' || lastname.value === '' || idnumber.value === '' || email.value === '' ||
+    //     contactnumber.value === '' || course.value === '' || year.value === ''|| birthday.value === ''|| 
+    //     usertype.value === '' ){
+
+    //     danger.style.display = 'block';
+    // }
+    // else{
+    //     setTimeout(() =>{
+    //         firstname.value != '';
+    //         lastname.value != '';
+    //         idnumber.value != '';
+    //         email.value != '';
+    //         course.value != '';
+    //         year.value != '';
+    //         birthday.value != '';
+    //         usertype.value != '';
+    //     }, 4000);
+        
+    //     success.style.display = 'block';
+    // }
+
+    // setTimeout(() =>{
+    //     danger.style.display = 'none';
+    //     success.style.display = 'none';
+    // }, 2000);
+
+}
+</script>
+
+
+<!-- NAV BAR -->
+{% load static %}
+<header>
+
+    <img class="logo" src="{% static 'MEDIA/logo.png' %}" alt="logo" >
+    <text class="heading">Technological University of the Philippines - Cavite</text>
+    <nav class="navbar navbar-expand-lg navbar-light ng-light"></nav>
+    
+</header>
+
+<!-- SIDE BAR -->
+
+<div id="sideBar">
+    <a href="javscript:void(0)" class="btn-area" onclick="closeBtn()">×</a>
+    <div class="mainNav">
+        {% for user in user %}
+        <img src="{{user.student_pic.url}}" style="width:100%; height:250px;">
+        <a class="sideText">{{user.usertype}}</a>
+        <a class="subText">{{user.idnumber}}</a>
+        <a class="subText">{{user.course}}/{{user.year}} Year</a>
+        <a href="{% url 'logout' %}" class="logout"><button class="outButton">LOGOUT</button></a>  
+        {% endfor %}            
+    </div>
+</div>
+<a href="{% url 'admin_dashboard' %}" class="home"><button class="home">HOME</button></a>
+<span onclick="openBtn()">☰</span>
+
+<body>    
+    <section>
+        <div>
+            <div class="box">
+            
+                <p>Student Registration</p>
+                <form method="POST" enctype= multipart/form-data>
+                    {% csrf_token %}
+                    <div class="txt_field" >
+                        <label>First Name:</label>
+                        <input type="text" id="first_name" name="first_name" required>
+                        <span></span>
+                    </div>
+                    <div class="txt_field">
+                        <label>Last Name:</label>
+                        <input type="text" id="last_name" name="last_name" required>
+                        <span></span>
+                    </div>
+                    <div class="txt_field" >
+                        <label>Student ID:</label>
+                        <input type="text" id="idnumber" name="idnumber" required>
+                        <span></span>
+                    </div>
+                    <div class="txt_field" >
+                        <label>GSFE Email:</label>
+                        <input type="text" id="email" name="email" required>
+                        <span></span>
+                    </div> 
+                    <div class="txt_field" >
+                        <label>Contact Number:</label>
+                        <input type="tel" id="contactnumber" name="contactnumber" required>
+                        <span></span>
+                    </div>
+                    <div class="combobox">
+                        <label class="coursel">Course:</label>
+                        <select class="combo" id="course" name="course" required>
+                            <option value="BET-COET-S">BET-COET-S</option>
+                            <option value="BET-COET-NS">BET-COET-NS</option>
+                            <option value="BET-MT-S">BET-MT-S</option>
+                            <option value="BET-MT-NS">BET-MT-NS</option>
+                            <option value="BET-CT-S">BET-CT-S</option>
+                            <option value="BET-CT-NS">BET-CT-NS</option>
+                            <option value="">None</option>
+                        </select>                    
+                    </div>
+                    <div class="combobox">
+                        <label class="yearl">Year:</label>
+                        <select class="combo" style="margin-bottom: -20px;" id="year" name="year" required>
+                            <option value="1st">1st</option>
+                            <option value="2nd">2nd</option>
+                            <option value="3rd">3rd</option>
+                            <option value="4th">4th</option>
+                            <option value="5th">5th</option>
+                            <option value="">None</option>
+                        </select>                    
+                    </div>
+                    <div class="txt_field" >
+                        <label>Birthdate:</label>
+                        <input type="date" class="date-input" id="birthday" name="birthday" required>
+                        <!-- <span></span> -->
+                    </div>
+                    <div class="combobox">
+                        <label class="userl">Usertype:</label>
+                        <select class="combo" id="usertype" name="usertype" required>
+                            <option value="STUDENT">STUDENT</option>
+                            <option value="ADMIN">ADMIN</option>
+                        </select>                    
+                    </div>
+                    <div class="" >
+                        <label>ID Picture:</label>
+                        <input type="file"  accept="image/*" id="student_pic" name="student_pic" required>
+                        <span></span>
+                    </div> 
+                    <div>
+                        <button id="submit" onclick="submit_forms()">SUBMIT</button>
+                        <a href="{% url 'admin_dashboard' %}" class="cancel"><button type="button" class="cancel">Cancel</button></a>
+                    </div>
+                </form>        
+
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

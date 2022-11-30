@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="home_script.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+    <title>Technological University of the Philippines - Cavite</title>
+
+
+</head>
+
+<style>
+
+* {
+    list-style: none;
+    text-decoration: none;
+}
+
+body,
+html {
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+
+header {
+    margin: 0px;
+    margin-bottom: -24px;
+    padding: 0;
+    background-image: linear-gradient(to right, rgb(128, 0, 0),rgb(216, 32, 32), rgb(128, 0, 0));
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    padding: 1px 2%;
+    text-align: left;
+}
+
+.logo {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 35px;
+    z-index: 99;
+    width: auto;
+    height: 50px;
+}
+
+h2 {
+    font-family: "Saira Condensed", sans-serif;
+    margin: 0;
+    padding-top: 25px;
+    padding-bottom: 8px;
+    padding-right: 80px;
+    font-weight: 500;
+    font-size: 45px;
+    color: #edfef1;
+    text-decoration: none;
+}
+
+text.heading {
+    font-family: "Saira Condensed", sans-serif;
+    text-align: left;
+    margin-left: 30px;
+    font-size: 20px;
+    color: #edfef1;
+    text-decoration: none;
+}
+
+#sideBar {
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	right: 0;
+	background-color: rgb(52, 58, 64);
+	overflow-x: hidden;
+	transition: 0.5s;
+	padding-top: 60px;
+}
+
+.mainNav {
+	margin-top: 70px;
+}
+
+.mainNav a {
+	margin-bottom: 15px;
+}
+
+#sideBar a {
+	padding: 8px 8px 8px 10px;
+	text-decoration: none;
+	/* font-size: 25px; */
+	color: #fff;
+	display: block;
+	transition: 0.4s;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+a.sideText {
+    font-size: 27px;
+    margin-top: -15px;
+    /* margin-bottom: 20%; */
+}
+
+a.logout {
+    font-size: 15px;
+    margin-top: 30vh;
+}
+
+a.logout:hover {
+	color: #fff;
+	background: rgb(178, 9, 38);
+}
+
+button.outButton {
+	color: #edfef1;
+	background-color: rgba(255, 255, 255, 0);
+    border: none;
+    border-width: none;
+}
+
+#sideBar .btn-area {
+    position: absolute;
+    top: -5px;
+    right: 33px;
+    font-size: 40px;
+}
+
+#sideBar .btn-area:hover {
+    color: #fff;
+	background: rgb(178, 9, 38);
+}
+
+span {
+	position: absolute;
+	right: 41px;
+	top: 15px;
+	font-size: 30px;
+	transition: 0.3s;
+	cursor: pointer;
+	color: #edfef1;
+}
+
+.a {
+    text-align: center;
+    padding-right: 30px;
+    color: #edfef1;
+}
+
+.id {
+    margin-top: 10%;
+    margin-bottom: 1px;
+    width: auto;
+    height: 160px;
+}
+
+.grid-container {
+    display: grid;
+    /* float: left; */
+    grid-template-columns: 23% 20% 1% 20% 1% 12% 12%;
+    gap: 1px;
+    /* background-color: #2196F3;
+    padding: 10px; */
+    /* height: 80px; */
+    margin-top: 30px;
+    align-items: center;
+}
+
+.grid-container > div {
+    /* background-color: rgba(255, 255, 255, 0.8); */
+    text-align: center;
+    padding: 20px 0;
+    font-size: 20px;
+    height: 50px;
+    margin-left: 63px;
+    /* margin-top: -10px; */
+}
+
+form.search {
+    background: #fff;
+    width: 70%;
+    height: 28px;
+    display: flex;
+    font-size: 15px;
+    margin-top: 4px;
+
+}
+
+form.search input {
+    flex: 1;
+    border-end-start-radius: none;
+    outline: none;
+    width: 100%;
+}
+
+form.search button {
+    background: transparent;
+    margin-left: -32px;
+    margin-top: -1px;
+    /* padding: 10px 50px; */
+    border: 10px;
+    outline: 1px;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+form.search img {
+    height: 20px;
+}
+
+select.combo {
+    font-size: 14px;
+    height: 28px;
+    width: 70%;
+    margin-left: -250px;
+
+}
+
+button.submitPos {
+    background: transparent;
+    margin-left: -420px;
+    margin-top: -1px;
+    /* padding: 10px 50px; */
+    border: 10px;
+    outline: 1px;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+button.submitPos img {
+    height: 20px;
+}
+
+div.date {
+    margin-left: -100px;
+    margin-top: 10px;
+    font-size: 15px;
+    width: 70%;
+    height: 50px;
+}
+
+div.date input {
+    width: 90%;
+}
+
+button.submitDate {
+    background: transparent;
+    margin-left: -500px;
+    margin-top: -1px;
+    /* padding: 10px 50px; */
+    border: 10px;
+    outline: 1px;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+button.submitDate img {
+    height: 20px;
+}
+
+button.pending {
+    /* padding-bottom: 30px;
+    padding-left: 30px;
+    padding-right: 30px; */
+    height: 37px;
+    width: 150px;
+    border-radius: 10px;
+    font-size: 15px;
+    margin-left: 40px;
+    margin-top: -6px;
+    background-color: rgb(198, 29, 58);
+    border-color: rgb(198, 29, 58);
+    color: rgb(255, 255, 255);
+}
+
+button.pending:hover {
+    background-color: rgb(218, 49, 78);
+    border-color:  rgb(218, 49, 78);
+}
+
+button.pending:active {
+    background-color: rgb(178, 9, 38);
+    border-color: rgb(178, 9, 38);
+}
+
+button.register {
+    /* padding-bottom: 30px;
+    padding-left: 30px;
+    padding-right: 30px; */
+    height: 37px;
+    width: 150px;
+    border-radius: 10px;
+    font-size: 15px;
+    margin-left: -220px;
+    margin-top: -6px;
+    background-color: rgb(198, 29, 58);
+    border-color: rgb(198, 29, 58);
+    color: rgb(255, 255, 255);
+}
+
+button.register:hover {
+    background-color: rgb(218, 49, 78);
+    border-color:  rgb(218, 49, 78);
+}
+
+button.register:active {
+    background-color: rgb(178, 9, 38);
+    border-color: rgb(178, 9, 38);
+}
+
+button.transcribe {
+    /* padding-bottom: 30px;
+    padding-left: 30px;
+    padding-right: 30px; */
+    height: 37px;
+    width: 150px;
+    border-radius: 10px;
+    font-size: 15px;
+    margin-top: -6px;
+    margin-right: -14vw;
+    background-color: rgb(198, 29, 58);
+    border-color: rgb(198, 29, 58);
+    color: rgb(255, 255, 255);
+}
+
+button.transcribe:hover {
+    background-color: rgb(218, 49, 78);
+    border-color:  rgb(218, 49, 78);
+}
+
+button.transcribe:active {
+    background-color: rgb(178, 9, 38);
+    border-color: rgb(178, 9, 38);
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: '\0020';
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+    height: 0; }
+.clearfix:after {
+    clear: both; }
+.clearfix {
+    zoom: 1; }
+
+#dataTable {
+    /* position: absolute; */
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    border: 2px solid black;
+    width: 94%;
+    margin-left: 40px;
+    margin-top: 31px;
+    margin-bottom: 30px;
+  /* height: 100vh; */
+}
+
+#dataTable td, #data th {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+#dataTable tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+#dataTable tr:nth-child(odd){
+    background-color: #eceaea;
+}
+
+#dataTable tr:hover {
+    background-color: #ddd;
+}
+
+#dataTable th {
+    font-size: 13px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: rgb(198, 29, 58);
+    color: white;
+}
+
+#dataTable td {
+    font-size: 14px;
+    height: 30px;
+}
+
+@media only screen and (min-width: 1750px) {
+    button.pending {
+    margin-right: -25vw;
+}
+
+button.transcribe {
+    margin-right: -18vw;
+}
+}
+
+
+
+@media only screen and (max-width: 1600px) {
+    button.pending {
+    margin-right: -150px;
+}
+
+button.transcribe {
+    margin-right: -148px;
+}
+
+}
+
+@media only screen and (min-width: 1400px) {
+    #dataTable {
+    width: 96%;
+}
+a.logout {
+    font-size: 15px;
+    margin-top: 150px;
+}
+}
+
+@media only screen and (max-width: 1326px) {
+button.pending {
+    font-size: 13px;
+    width: 120px;
+    margin-left: -35px;
+}
+
+button.transcribe {
+    font-size: 13px;
+    width: 100px;
+    margin-left: -15px;
+} 
+
+
+@media only screen and (max-width: 1042px) {
+.grid-container {
+    grid-template-columns: 23%  20% 1% 20% 1% 12% 12%;
+}
+
+button.pending {
+    font-size: 13px;
+    width: 120px;
+}
+
+button.transcribe {
+    font-size: 13px;
+    width: 100px;
+} 
+
+}
+
+
+}
+
+
+
+
+
+</style>
+
+
+<script>
+    function openBtn(){
+        document.getElementById("sideBar").style.width = "250px";
+    }
+
+    function closeBtn(){
+        document.getElementById("sideBar").style.width = "0";
+    }
+
+    function filter_by_id(){
+        document.getElementById("ACTION").value ="ID"
+        document.form.submit()
+    }
+    function filter_by_course(){
+        document.getElementById("ACTION").value ="COURSE"
+        document.form.submit()
+    }
+    function filter_by_date(){
+        document.getElementById("ACTION").value ="DATE"
+        document.form.submit()
+    }
+    function transcribe(){
+        document.getElementById("ACTION").value ="TRANSCRIBE"
+        document.form.submit()
+    }
+
+</script>
+
+
+<!-------------- NAV BAR ------------------>
+{% load static %}
+
+<header>
+
+    <img class="logo" src="{% static 'MEDIA/logo.png' %}" alt="logo">
+    <text class="heading">Technological University of the Philippines - Cavite</text>
+    <nav class="navbar navbar-expand-lg navbar-light ng-light"></nav>
+    
+</header>
+
+
+<body style = "background-image:url('{% static 'MEDIA/bg8.png'%}');">
+ 
+<!-------------- SIDE BAR ------------------>
+
+    <div id="sideBar">
+        <a href="javscript:void(0)" class="btn-area" onclick="closeBtn()">×</a>
+        <div class="mainNav">
+            {% for user in user %}
+            <img src="{{user.student_pic.url}}" style="width:100%; height:250px;">
+            <a class="sideText">{{user.first_name}} {{user.last_name}}</a>
+            <a class="subText">{{user.usertype}}</a>
+            <a class="subText">{{user.idnumber}}</a>
+            <a href="{% url 'logout' %}" class="logout"><button class="outButton">LOGOUT</button></a>         
+            {% endfor %}   
+        </div>
+    </div>
+    <span onclick="openBtn()">☰</span>
+    
+
+<!-------------- TOP ELEMENTS -------------->
+
+    <div class="grid-container">
+        <div>
+            <form class="search" method="POST" >
+                {% csrf_token %}
+                <input type="text" placeholder="" id="ID" name= "ID" >
+                <button onclick="filter_by_id()"><img src="{% static 'MEDIA/search.png' %}"></button>
+        </div>
+        <div>
+            <select class="combo" id="COURSE" name= "COURSE">
+                <option value="BET-COET-S">BET-COET-S</option>
+            </select>
+            <input type="text" id="type" name ="type" value= "COURSE" hidden>
+        </div>
+        <div>
+            <button class="submitPos" onclick="filter_by_course()"><img src="{% static 'MEDIA/search.png' %}"></button>
+            
+        </div>  
+        <div class="date" >
+                <input type="date" id="DATE" name="DATE">
+                <input type="text" id="ACTION" name ="ACTION" hidden>
+                <!-- <input type="submit"> -->
+        </div>  
+        <div>
+            <button class="submitDate" onclick="filter_by_date()"><img src="{% static 'MEDIA/search.png' %}"></button>
+            </form>
+        </div>  
+        <div>
+            <a href="{% url 'student_registration' %}" class="register"><button class="register">Register</button></a>
+            <a href="{% url 'pending_vehicle' %}" class="pending"><button class="pending">Pending Vehicles</button></a>
+        </div>
+        <div>
+            <button class="transcribe" >Transcribe</button>
+        </div>
+    </div>
+
+<!-------------- TABLE ------------------>    
+
+    <div class="clearfix">
+        <table id="dataTable">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Time In</th>
+                    <th>Time Out</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>GSFE</th>
+                    <th>ID Number</th>
+                    <th>Course</th>
+                    <th>Year</th>
+                    <th>Contact Number</th>
+                    <th>Vehicle ID</th>
+                  </tr>
+
+            </thead>
+            {% for record in record %}
+                {% for student in student %}
+                        {% if record.idnumber == student.idnumber %}
+                            <tbody>
+                                <tr>
+                                    <td>{{record.date}}</td>
+                                    <td>{{record.timein}}</td>
+                                    <td>{{record.timeout}}</td>
+                                    <td>{{student.first_name}}</td>
+                                    <td>{{student.last_name}}</td>
+                                    <td>{{student.email}}</td>
+                                    <td>{{record.idnumber}}</td>
+                                    <td>{{student.course}}</td>
+                                    <td>{{student.year}}</td>
+                                    <td>{{student.contactnumber}}</td>
+                                    <td>{{record.vehicleid}}</td>
+                                </tr>
+                            </tbody>
+                        {% endif %}   
+                {% endfor %}  
+            {% endfor %}    
+    </div>
+
+
+</body>
+
+
+</html>
+
+</html>

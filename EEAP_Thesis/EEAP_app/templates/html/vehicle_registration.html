@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- <script src="home_script.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+    <title>Technological University of the Philippines - Cavite</title>
+
+</head>
+
+<style>
+    *{
+    list-style: none;
+        text-decoration: none;
+    
+    }
+    
+    body {
+        background-image: linear-gradient(#EAEAEA, #B2B2B2,#3C4048);
+        background-attachment: fixed;
+        width: 100%;
+        height: 100%;
+        background-size: cover;     
+    }
+    
+    header {
+        margin: 0px;
+        margin-bottom: -24px;
+        padding: 0;
+        background-image: linear-gradient(to right, rgb(128, 0, 0),rgb(216, 32, 32), rgb(128, 0, 0));
+        display: flex;
+        /* justify-content: space-between; */
+        align-items: center;
+        padding: 1px 2%;
+        text-align: left;
+    }
+    
+    .logo {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 35px;
+        z-index: 99;
+        width: auto;
+        height: 50px;
+    }
+    
+    h2 {
+        font-family: "Saira Condensed", sans-serif;
+        margin: 0;
+        padding-top: 25px;
+        padding-bottom: 8px;
+        padding-right: 80px;
+        font-weight: 500;
+        font-size: 45px;
+        color: #edfef1;
+        text-decoration: none;
+    }
+    
+    text.heading {
+        font-family: "Saira Condensed", sans-serif;
+        text-align: left;
+        margin-left: 30px;
+        font-size: 20px;
+        color: #edfef1;
+        text-decoration: none;
+    }
+    
+    #sideBar {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        background-color: rgb(52, 58, 64);
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+    }
+    
+    .mainNav {
+        margin-top: 70px;
+    }
+    
+    .mainNav a {
+        margin-bottom: 15px;
+    }
+    
+    #sideBar a {
+        padding: 8px 8px 8px 10px;
+        text-decoration: none;
+        /* font-size: 25px; */
+        color: #fff;
+        display: block;
+        transition: 0.4s;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    
+    a.sideText {
+        font-size: 22px;
+        margin-top: -15px;
+        margin-bottom: px;
+    }
+    
+    a.subText {
+        text-decoration: none;
+        /* font-size: 22px; */
+        margin-top: -10px;
+        margin-bottom: px;
+    }
+    
+    a.logout {
+        font-size: 15px;
+        margin-top: 150px;
+    }
+    
+    a.logout:hover {
+        color: #fff;
+        background: rgb(178, 9, 38)
+    }
+    
+    button.outButton {
+        color: #edfef1;
+        background-color: rgba(255, 255, 255, 0);
+        border: none;
+        border-width: none;
+    }
+    
+    #sideBar .btn-area {
+        position: absolute;
+        top: -5px;
+        right: 33px;
+        font-size: 40px;
+    }
+    
+    #sideBar .btn-area:hover {
+        color: #fff;
+        background: rgb(178, 9, 38);
+    }
+    
+    span {
+        position: absolute;
+        right: 40px;
+        top: 15px;
+        font-size: 30px;
+        transition: 0.3s;
+        cursor: pointer;
+        color: #edfef1;
+    }
+    
+    .a {
+        text-align: center;
+        padding-right: 30px;
+        color: #edfef1;
+    }
+    
+    .id {
+        margin-top: 2px;
+        margin-bottom: 1px;
+        width: auto;
+        height: 160px;
+    }
+    .home {
+       position: absolute;
+      /* font-size: 20px; */
+       right: 50px;
+       top: 6px;
+      --h: 3.2em;   /* the height */
+      border-style: none;
+      
+      line-height: var(--h);
+      color: #fff;
+      background: 
+        linear-gradient(rgb(178, 9, 38) 0 0) 
+        bottom/100% var(--_d, 0) no-repeat;
+      /* overflow: hidden; */
+      transition: 0.3s;
+    }
+    
+    .home:hover {
+      --_d: 100%;
+      --_t: 0;
+      --_c: #0000;
+    }
+
+    .card {
+        position: relativeab;
+        top: 3vw;
+        left: 3vw;
+        right: 3vw;
+        bottom: 3vw;
+        width:95vw;
+        height: 45.5vw;
+        display: block;
+        border: 1px solid none; 
+        border-radius: 7px;
+        box-shadow: 3px 2px rgb(161, 160, 160);
+        
+    }
+   
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 54% 45% ;
+      gap: 20px;
+      background-color: #ffffff;
+      padding: 40px;
+      height: 45vw;
+      border: 1px solid none; 
+      border-radius: 7px;
+    }
+
+    .grid-container > div {
+      text-align: center;
+      border: 1px solid none; 
+      border-radius: 5px;
+      font-size: 30px;    
+      
+    }
+
+    .card-left {
+        background-color: rgb(248, 248, 248);
+        border: 2px solid black; 
+        border-radius: 7px;
+        box-shadow: 3px 2px rgb(161, 160, 160);
+    }
+
+    .card-left p {
+        color: rgb(0, 0, 0);
+        font-weight: 600;
+        font-family:Georgia, 'Times New Roman', Times, serif ;
+        letter-spacing: 5px;
+        font-size: 30px;
+        margin-top: 10px;
+        text-shadow: 2px 2px rgb(180, 179, 179);
+
+    }
+    .card-right {
+       background-color:#941311;
+       box-shadow: 3px 2px rgb(161, 160, 160);
+    }
+    
+    form .txt_field{
+        position: relative;
+        background-color: white;
+        border-bottom: 2px solid #000000;
+        border-top: 2px solid #000000;
+        border-left:2px solid #000000 ;
+        border-right: 2px solid #000000;
+        margin: 30px 150px ;
+        right: 10px;
+        top: 5px;
+        padding-top: 0px;
+        padding-bottom: 0px ;
+    }
+     
+    .txt_field input{
+        width: 100%;
+        padding: 0 5px;
+        height: 35px;
+        font-size: 25px;
+        border: none;
+        background: none;
+        outline: 2px;
+        font-family: "Courier New";
+    }
+
+    .txt_field select{
+        width: 100%;
+        padding: 0 5px;
+        height: 35px;
+        font-size: 25px;
+        border: none;
+        background: none;
+        outline: 2px;
+        font-family: "Courier New";
+    }
+
+    .txt_field label{
+        position: absolute;
+        top: 50%;
+        left: 5px;
+        color:#888484;
+        transform: translateY(-50%);
+        font-size: 18px;
+        pointer-events: none;
+        transition: .5s;
+        font-family: "Courier New";
+        font-weight: 600;
+    }
+    .txt_field input:focus ~ label,
+    .txt_field input:valid ~ label{
+        top: -15px;
+        color: #000000;
+        font-size: 25px;
+    }
+    .txt_field input:focus ~ span::before,
+    .txt_field input:valid ~ span::before{
+        width: 100%;
+    }
+
+    .txt_field select:focus ~ label,
+    .txt_field select:valid ~ label{
+        top: -15px;
+        color: #000000;
+        font-size: 25px;
+    }
+    .txt_field select:focus ~ span::before,
+    .txt_field select:invalid ~ span::before{
+        width: 100%;
+    }
+
+    .modal {
+        display: none; 
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px; 
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%; 
+        overflow: auto; 
+        background-color: rgb(0,0,0); 
+        background-color: rgba(0,0,0,0.4);
+    }
+
+    /* Modal Content */
+    .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        top: 25%;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 50%;
+        height: 50%;
+    }
+
+    /* The Close Button */
+    .close {
+        color: #aaaaaa;
+        float: right;
+        font-size: 30px;
+        font-weight: 800;
+        top: -8px;
+        right: 9px;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: rgb(255, 0, 0);
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+
+    .modal-content a {
+        font-size: 20px;
+        text-align: left;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: 600;
+        margin-top: 20px;
+        border-bottom: 2px solid #303030;
+        border-top: 2px solid #303030;
+   
+    }
+
+    .grid-container-modal {
+      display: grid;
+      grid-template-columns: 20% 20% 20% 20% 20%;
+      gap: 10px;
+      background-color: #ffffff;
+      padding: 20px;
+      height: 45vw;
+      border: 1px solid none; 
+      border-radius: 7px;
+      box-shadow: 5px black;
+    }
+
+    .grid-container-modal > div {
+      text-align: center;
+      border: 1px solid black; 
+      border-radius: 5px;
+      font-size: 30px;    
+      
+    }
+
+    .container2a {
+        background: rgb(255, 255, 255);
+        color: #fff;
+        background-size:contain;
+        background-position: contain;
+        height: 500px;
+        width: 505px;
+        top: 60px;
+        position:sticky;
+        display: sticky;
+        background-repeat: no-repeat;  
+    }
+    
+    .container3a {
+        background: rgb(255, 255, 255);
+        color: #fff;
+        background-size:contain;
+        background-position: contain;
+        height: 500px;
+        width: 505px;
+        top: 60px;
+        position:sticky;
+        display: sticky;
+        background-repeat: no-repeat;     
+    }
+
+    .container4a {
+        background: rgb(255, 255, 255);
+        color: #fff;
+        background-size:contain;
+        background-position: contain;
+        height: 500px;
+        width: 505px;
+        top: 60px;
+        position:sticky;
+        display: sticky;
+        background-repeat: no-repeat;  
+    }
+
+    .container5a {
+        background: rgb(255, 255, 255);
+        color: #fff;
+        background-size:contain;
+        background-position: contain;
+        height: 500px;
+        width: 505px;
+        top: 60px;
+        position:sticky;
+        display: sticky;
+        background-repeat: no-repeat;  
+    }
+
+    .container6a {
+        background: rgb(255, 255, 255);
+        color: #fff;
+        background-size:contain;
+        background-position: contain;
+        height: 500px;
+        width: 505px;
+        top: 60px;
+        position:sticky;
+        display: sticky;
+        background-repeat: no-repeat;  
+    }
+
+    .container2 {
+        background: rgb(247, 245, 245);
+        color: #fff;
+        background-size: cover;
+        background-position: center;
+        height: 100px;
+        width: 100px;
+        top: 60px;
+        position: relative;
+        outline-style: dashed;
+        color: #8e9296;
+        outline-offset: -10px;
+        display: flex;
+    
+     }
+    .upload-photo1{
+        position: relative;
+        top: 30px;
+        left:25px;
+        cursor: pointer;
+        width: 49%;
+        height: 35px;
+        font-size: 13px;
+        color: #000000;
+        font-family: "Courier New";
+        cursor: pointer;
+        outline: none;
+        font-weight: 700;
+        border-radius: 10px;
+    }
+
+    .upload-photo1[for="file1"]:hover{
+        border-color:#adabab;
+        border-radius: 10px;
+        background:#910000;
+        transition: .5s;
+        color: #ffffff;
+    }
+        
+    /*----secondbox---*/
+
+    .container3 {
+        background: rgb(247, 245, 245);
+        color: #fff;
+        background-size: cover;
+        background-position: center;
+        height: 100px;
+        width: 100px;
+        top: 60px;
+        position: relative;
+        outline-style: dashed;
+        color: #8e9296;
+        outline-offset: -10px;
+        display: flex;
+    }
+    
+    .upload-photo2{
+        position: relative;
+        top: 30px;
+        left:25px;
+        cursor: pointer;
+        width: 49%;
+        height: 35px;
+        font-size: 13px;
+        color: #000000;
+        font-family: "Courier New";
+        cursor: pointer;
+        outline: none;
+        font-weight: 700;
+        border-radius: 10px;
+    }
+
+    .upload-photo2[for="file2"]:hover{
+        border-color:#adabab;
+        background: #910000;
+        transition: .5s;
+        color: #ffffff;
+    } 
+    
+        /*----thirdbox---*/
+
+    
+    .container4 {
+        background: rgb(247, 245, 245);
+        color: #fff;
+        background-size: cover;
+        background-position: center;
+        height: 100px;
+        width: 100px;
+        top: 60px;
+        position: relative;
+        outline-style: dashed;
+        color: #8e9296;
+        outline-offset: -10px;
+        display: flex;
+    }
+
+    .upload-photo3{
+        position: relative;
+        top: 30px;
+        left:25px;
+        cursor: pointer;
+        width: 49%;
+        height: 35px;
+        font-size: 13px;
+        color: #000000;
+        font-family: "Courier New";
+        cursor: pointer;
+        outline: none;
+        font-weight: 700;
+        border-radius: 10px;
+    }
+    .upload-photo3[for="file3"]:hover{
+        border-color:#adabab;
+        background: #910000;
+        transition: .5s;
+        color: #ffffff;
+    } 
+
+    /*----fourthbox---*/
+
+
+    .container5 {
+        background: rgb(247, 245, 245);
+        color: #fff;
+        background-size: cover;
+        background-position: center;
+        height: 100px;
+        width: 100px;
+        top: 60px;
+        position: relative;
+        outline-style: dashed;
+        color: #8e9296;
+        outline-offset: -10px;
+        display: flex;
+    }
+    
+        
+    .upload-photo4{
+        position: relative;
+        top: 30px;
+        left:25px;
+        cursor: pointer;
+        width: 49%;
+        height: 35px;
+        font-size: 13px;
+        color: #000000;
+        font-family: "Courier New";
+        cursor: pointer;
+        outline: none;
+        font-weight: 700;
+        border-radius: 10px;
+    }
+
+    .upload-photo4[for="file4"]:hover{
+        border-color:#adabab;
+        background: #910000;
+        transition: .5s;
+        color: #ffffff;
+    } 
+        /*----fifthbox---*/
+
+
+    .container6 {
+        background: rgb(247, 245, 245);
+        color: #fff;
+        background-size: cover;
+        background-position: center;
+        height: 100px;
+        width: 100px;
+        top: 60px;
+        position: relative;
+        outline-style: dashed;
+        color: #8e9296;
+        outline-offset: -10px;
+        display: flex;
+    }
+
+    .upload-photo5{
+        position: relative;
+        top: 30px;
+        left:25px;
+        cursor: pointer;
+        width: 49%;
+        height: 35px;
+        font-size: 13px;
+        color: #000000;
+        font-family: "Courier New";
+        cursor: pointer;
+        outline: none;
+        font-weight: 700;
+        border-radius: 10px;
+    }
+
+    .upload-photo5[for="file5"]:hover{
+        border-color:#adabab;
+        background:#910000;
+        transition: .5s;
+        color: #ffffff;
+    } 
+    
+    #nameview {
+        position: absolute;
+        bottom: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        background:none;
+        font-size: 16px;
+        color: #050505;
+        font-family: "Saira Condensed", sans-serif;
+    }
+    .done{
+        width: 50%;
+        height: 30px;
+        border: 2px solid;
+        background: #929090;
+        font-size: 18px;
+        color: #e9f4fb;
+        font-family: "Courier New";
+        cursor: pointer;
+        outline: none;
+        border-color:#929090;
+        font-weight: 700;
+        padding-left: 5%;
+        padding-right: 5%;
+        left: 250px;
+        top: 350px;
+        position: absolute;
+        border-radius: 10px;
+        }
+
+    .done:hover{
+        border-color:#910000;
+        background: #910000;
+        transition: .5s;
+    }
+
+    #submit{
+        width: 25%;
+        height: 30px;
+        border: 2px solid;
+        background: #b30d0d;
+        font-size: 18px;
+        color: #e9f4fb;
+        font-family: "Courier New";
+        cursor: pointer;
+        outline: none;
+        border-color:#910000;
+        font-weight: 700;
+        padding-left: 5%;
+        padding-right: 5%;
+        margin-top:200px;
+        left:220px;
+        position: absolute;
+        border-radius: 10px;
+        }
+
+    #submit:hover{
+        border-color:#910000;
+        background: #910000;
+        transition: .5s;
+    }
+
+        /* Slideshow container */
+    .slideshow-container {
+        width: 85%;
+        height:90%;
+        margin-left: 8%;
+        margin-top: 5%;
+        position: relative;
+        background-color: rgb(255, 255, 255);
+        border: 2px solid black; 
+        border-radius: 7px;
+    }
+
+    .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        right: 3%;
+        margin-top: -22px;
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+    }
+    .prev  {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        left: 1%;
+        padding: 16px;
+        margin-top: -22px;
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover, .next:hover {
+        background-color: rgba(0,0,0,0.8);
+    }
+
+    /* Caption text */
+    .text {
+        color: #000000;
+        font-size: 20px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+        color: #000000;
+        font-size: 15px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+    }
+
+
+    /* Fading animation */
+    .fade {
+        animation-name: fade;
+        animation-duration: 1.5s;
+    }
+
+    @keyframes fade {
+        from {opacity: .4} 
+        to {opacity: 1}
+    }
+
+    /* On smaller screens, decrease text size */
+    @media only screen and (max-width: 300px) {
+        .prev, .next,.text {font-size: 11px}
+    }
+
+    @media only screen and (max-width: 1390px) {
+    .card {
+        height: 120vh;
+    }
+
+    .card-left {
+        height: 110vh;
+    }
+
+    #submit{
+        position: absolute;
+        left: 15vw;
+        bottom: 8vh;
+    }
+
+    .modal-content {
+        height: 60vh;
+        width: 160vh;
+    }
+}
+
+
+@media only screen and (max-width: 1000px) {
+.card {
+    height: 120vh;
+}
+
+.card-left {
+    height: 110vh;
+}
+
+input[type="text"]{
+    width: 80vw;
+
+}
+
+input[type="password"]{
+    width: 500px;
+}
+
+.modal-content {
+    height: 60vh;
+    width: 150vh;
+}
+}
+
+
+
+
+
+</style>
+<!-------------- NAV BAR ------------------>
+{% load static %}
+
+<header>
+    <img class="logo" src="{% static 'MEDIA/logo.png' %}" alt="logo">
+    <text class="heading">Technological University of the Philippines - Cavite</text>
+    <nav class="navbar navbar-expand-lg navbar-light ng-light"></nav>
+</header>
+
+<body>
+
+    <!-------------- SIDE BAR ------------------>
+
+    <div id="sideBar">
+        <a href="javscript:void(0)" class="btn-area" onclick="closeBtn()">×</a>
+        <div class="mainNav">
+            {% for user in user %}
+            
+            <img src="{{user.student_pic.url}}" style="width:100%; height:250px;">
+            <a class="sideText">{{user.usertype}}</a>
+            <a class="subText">{{user.idnumber}}</a>
+            <a class="subText">{{user.course}}/{{user.year}} Year</a>
+            <a href="{% url 'logout' %}" class="logout"><button class="outButton">LOGOUT</button></a>  
+            {% endfor %}          
+        </div>
+    </div>
+    <a href="{% url 'student_dashboard' %}" class="home"><button class="home">HOME</button></a>
+    <span onclick="openBtn()">☰</span>
+
+    <!----------------BODY------------------------>
+    <form action="" method="POST" id="form" name="form" enctype= multipart/form-data>
+        {% csrf_token %}
+    <div class="card">
+        <div class="grid-container">
+            <div class="card-left">
+                <p> Vehicle Registration</p>
+                        <div class="txt_field" >
+                            <input type="text" id ="plnum" name= "plnum" required>
+                            <span></span>
+                            <label id = "plnum_id">Plate Number:</label>
+                        </div>
+                        <div class="txt_field">
+                            <select id="vehicle" name= "vehicle" onchange="others_function()" required>
+                                <option disabled selected value></option>
+                                <option value="automobile" id="automobile">Automobile</option>
+                                <option value="motorcycle" id="motorcycle">Motorcycle</option>
+                                <option value="others" id="others">Others</option>
+                            </select>
+                            <span></span>
+                            <label>Vehicle Model:</label>
+                        </div>
+                        <p>Upload Vehicle Image</p>
+                            <a id="myBtn"><img src="{% static 'MEDIA/img.jpg' %}" style="height: 200px; width:200px;" ></button>
+                        <!-- The Modal -->
+                        <div id="myModal" class="modal">
+                          <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <a>Please upload the following: </a>
+                            <div class="grid-container-modal">
+                                    <div class="container2" id="imgBox">
+                                        <input type="file" accept="image/*" name="imageF" id="imageF" style="display: none;" onchange="loadFile(event)" required>
+                                        <label for="imageF" class="upload-photo1" >Upload Photo</label>
+                                        <label id="nameview">Front</label>
+                                    </div>
+                
+                                    <div class="container3" id="imgBox2">
+                                        <input type="file" accept="image/*" name="imageB" id="imageB" style="display: none;" onchange="loadFile2(event)" required>
+                                        <label for="imageB" class="upload-photo2" >Upload Photo</label>
+                                        <label id="nameview">Back</label>
+                                    </div>
+                
+                                    <div class="container4" id="imgBox3">
+                                        <input type="file" accept="image/*" name="imageL" id="imageL" style="display: none;" onchange="loadFile3(event)" required>
+                                        <label for="imageL" class="upload-photo3" >Upload Photo</label>
+                                        <label id="nameview">Left_Side</label>
+                                    </div>
+                
+                                    <div class="container5" id="imgBox4">
+                                        <input type="file" accept="image/*" name="imageR" id="imageR" style="display: none;" onchange="loadFile4(event)" required>
+                                        <label for="imageR" class="upload-photo4" >Upload Photo</label>
+                                        <label id="nameview">Right_Side</label>
+                                    </div>
+                
+                                    <div class="container6" id="imgBox5">
+                                        <input type="file" accept="image/*" name="ORCR" id="ORCR" style="display: none;" onchange="loadFile5(event)" required>
+                                        <label for="ORCR" class="upload-photo5" >Upload Photo</label>
+                                        <label id="nameview">OR/CR</label>
+                                    </div>
+                            </div>                              
+                          </div>                       
+                        </div>
+                        <button id="submit" onclick="submit_forms()"  >SUBMIT</button>      
+            </div>
+    </form>
+            <div class="card-right">
+                <div class="slideshow-container">
+                    <div class="Slides" id="imgBox">
+                      <div class="numbertext">1 / 5</div>
+                      <div class= "container2a" id="imgBoxs2a"></div>
+                      <div class="text">Front View</div>
+                    </div>
+                    
+                    <div class="Slides"id="imgBox2">
+                      <div class="numbertext">2 / 5</div>
+                      <div class= "container3a" id="imgBoxs3a"></div>
+                      <div class="text">Left Side</div>
+                    </div>
+
+                    <div class="Slides" id="imgBox3">
+                        <div class="numbertext">3 / 5</div>
+                        <div class= "container4a" id="imgBoxs4a"></div>
+                        <div class="text">Right Side</div>
+                      </div>
+                    
+                    <div class="Slides" id="imgBox4">
+                      <div class="numbertext">4 / 5</div>
+                      <div class= "container5a" id="imgBoxs5a"></div>
+                      <div class="text">Back View</div>
+                    </div>
+                    
+                    <div class="Slides" id="imgBox5">
+                        <div class="numbertext">5 / 5</div>
+                        <div class= "container6a" id="imgBoxs6a"></div>
+                        <div class="text">OR/CR</div>
+                      </div>
+
+                    <a class="prev" onclick="plusSlides(-1)">❮</a>
+                    <a class="next" onclick="plusSlides(1)">❯</a>
+                    
+                    </div>
+                    <br>
+                    
+                    <div style="text-align:center">
+                      <span class="dot" onclick="currentSlide(1)"></span> 
+                      <span class="dot" onclick="currentSlide(2)"></span> 
+                      <span class="dot" onclick="currentSlide(3)"></span> 
+                      <span class="dot" onclick="currentSlide(4)"></span> 
+                      <span class="dot" onclick="currentSlide(5)"></span> 
+                    </div>
+             
+
+            </div>
+       
+        </div>
+
+    </div>
+</body>
+</html>
+ 
+<script>
+    const random_plnum = makeid_letter(3) + makeid_number(3)
+    function openBtn()
+    {
+        document.getElementById("sideBar").style.width = "250px";
+    }
+
+    function closeBtn()
+    {
+        document.getElementById("sideBar").style.width = "0";
+    }
+    //------MODAL--------//
+
+    var modal = document.getElementById("myModal");
+
+
+    var btn = document.getElementById("myBtn");
+
+
+    var span = document.getElementsByClassName("close")[0];
+
+
+    btn.onclick = function() {
+     modal.style.display = "block";
+    }
+
+    span.onclick = function() {
+     modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+        modal.style.display = "block";
+    }
+    }
+//---photos///
+    let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("Slides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+//-----uploadphotos-----//
+var imgBox = document.getElementById("imgBox");
+var imgBoxs = document.getElementById("imgBoxs2a");
+    var loadFile = function(event) {
+        imgBox.style.backgroundImage = "url(" +URL.createObjectURL(event.target.files[0])+ ")";
+        imgBoxs.style.backgroundImage = "url(" +URL.createObjectURL(event.target.files[0])+ ")";
+    }
+
+    var imgBox2 = document.getElementById("imgBox2");
+    var imgBoxs2 = document.getElementById("imgBoxs3a");
+    var loadFile2 = function(event) {
+        imgBox2.style.backgroundImage = "url(" +URL.createObjectURL(event.target.files[0])+ ")";
+        imgBoxs2.style.backgroundImage = "url(" +URL.createObjectURL(event.target.files[0])+ ")";
+    }
+
+    var imgBox3 = document.getElementById("imgBox3");
+    var imgBoxs3 = document.getElementById("imgBoxs4a");
+    var loadFile3 = function(event) {
+        imgBox3.style.backgroundImage = "url(" +URL.createObjectURL(event.target.files[0])+ ")";
+        imgBoxs3.style.backgroundImage = "url(" +URL.createObjectURL(event.target.files[0])+ ")";
+    }
+
+    var imgBox4 = document.getElementById("imgBox4");
+    var imgBoxs4 = document.getElementById("imgBoxs5a");
+    var loadFile4 = function(event) {
+        imgBox4.style.backgroundImage = "url(" +URL.createObjectURL(event.target.files[0])+ ")";
+        imgBoxs4.style.backgroundImage = "url(" +URL.createObjectURL(event.target.files[0])+ ")";
+    }
+
+    var imgBox5 = document.getElementById("imgBox5");
+    var imgBoxs5 = document.getElementById("imgBoxs6a");
+    var loadFile5 = function(event) {
+        imgBox5.style.backgroundImage = "url(" +URL.createObjectURL(event.target.files[0])+ ")";
+        imgBoxs5.style.backgroundImage = "url(" +URL.createObjectURL(event.target.files[0])+ ")";
+    }
+
+function others_function(){
+    if (document.getElementById("vehicle").value == "others"){
+        document.getElementById("plnum").value = "";
+        document.getElementById("plnum_id").innerHTML = random_plnum;
+        document.getElementById("plnum").disabled = true;
+        
+    }
+
+    else{
+        document.getElementById("plnum_id").innerHTML = "Plate Number:";
+        document.getElementById("plnum").value = "";
+        document.getElementById("plnum").disabled = false;
+    }
+
+}
+
+function makeid_letter(length) {
+    var result           = '';
+    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    var charactersLength = characters.length;
+    for ( var i = 0; i < length; i++ ) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+}
+
+function makeid_number(length) {
+    var result           = '';
+    var characters       = '0123456789';
+    var charactersLength = characters.length;
+    for ( var i = 0; i < length; i++ ) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+}
+
+function submit_forms(){
+    var result = confirm('Are you sure about the information given below?');
+    if (result == false) {
+      event.preventDefault();
+    }
+    else{
+        if (document.getElementById("vehicle").value == "others"){
+        document.getElementById("plnum").disabled = false;
+        document.getElementById("plnum").value = "";
+        document.getElementById("plnum_id").innerHTML = random_plnum;
+        document.getElementById("plnum").value = random_plnum;
+        alert("success")
+        document.form.submit()
+        }
+        else{
+            document.form.submit()
+            alert("success")
+        }
+    }
+    // var plateno = document.getElementById('plnum');
+    // var veh = document.getElementById('vehicle');
+    // var imageb = document.getElementById('imageB');
+    // var imagef = document.getElementById('imageF');
+    // var imagel = document.getElementById('imageL');
+    // var imager = document.getElementById('imageR');
+    // var orcr = document.getElementById('ORCR');
+    // const success =  document.getElementById('success');
+    // const danger =  document.getElementById('danger');
+
+    // if(plateno.value === '' || veh.value === '' || imageb.value === '' || imagef.value === '' ||
+    //     imagel.value === '' || imager.value === '' || orcr.value === '' ){
+    //     danger.style.display = 'block';
+        
+    // }
+    // else{
+    //     setTimeout(() =>{
+    //         plateno.value = '';
+    //         veh.value = '';
+    //         imageb.value = '';
+    //         imagef.value = '';
+    //         imagel.value = '';
+    //         imager.value = '';
+    //         orcr.value = '';
+    //     }, 4000);
+        
+    //     success.style.display = 'block';
+          
+    // }
+
+    // setTimeout(() =>{
+    //     danger.style.display = 'none';
+    //     success.style.display = 'none';
+    // }, 2000);
+
+}
+
+</script>
+    
